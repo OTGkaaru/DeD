@@ -43,11 +43,11 @@ public class Palabra {
 		for (i = 0; i < x; i++)
 			adivina[i] = '_';
 	}
-
+//dasdfasdfasdfasdf
 	public void muestra() {
 		System.out.println(adivina);
 	}
-
+//dfasdfasdfasgdthrtyhnr6uj76364563456345634
 	public void introLetra() {
 		System.out.print("Letra? ");
 		letra = Leer.datoChar();
