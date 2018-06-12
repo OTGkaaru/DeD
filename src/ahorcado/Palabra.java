@@ -2,15 +2,18 @@ package ahorcado;
 
 public class Palabra {
 
-	private String[] palabras = { "repartidor", "caramelo", "artropodo","placa","ropero"};
+	private String[] palabras = { "repartidor", "caramelo", "artropodo", "placa", "ropero" };
 	private static char[] adivina;
+	private static char[] errores = new char[4];
 	private String palabra;
 	private static int x;
 	private char letra;
+	private boolean igual;
+	int vidas = 5;
 
 	private void selecPalabra() {
+		palabra = palabras[(int) (Math.random() * 5)];
 
-		palabra = palabras[(int) (Math.random() * 6) ];
 	}
 
 	public void cuentaPalabra() {
@@ -26,16 +29,16 @@ public class Palabra {
 		int i;
 
 		for (i = 0; i < palabra.length(); i++) {
-			if (a[i] == letra) {
+			if (a[i] == letra)
 				adivina[i] = letra;
-			}
 		}
+		String adi = new String(adivina);
+		if (palabra.equals(adi))
+			igual = true;
 	}
 
 	public boolean comprobar() {
-		if (palabra.equals(adivina))
-			return true;
-		return false;
+		return igual;
 	}
 
 	private static void rellenaAdivina() {
